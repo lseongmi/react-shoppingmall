@@ -1,7 +1,7 @@
 import React from "react";
 
 function CartItem({ item, updateQuantity, removeFromCart }) {
-  const [product, quantity] = item;
+  const { product, quantity } = item;
 
   const handleIncrease = () => {
     updateQuantity(product.id, quantity + 1);
@@ -24,7 +24,7 @@ function CartItem({ item, updateQuantity, removeFromCart }) {
   return (
     <div>
       <div>
-        <img src={product.imgUrl} alt={product.name} />
+        <img src={product.imgUrl} alt={product.name} width="50" />
       </div>
 
       <div>
@@ -33,17 +33,15 @@ function CartItem({ item, updateQuantity, removeFromCart }) {
       </div>
 
       <div>
-        <button onClick={handleDecrease} disabled={quantity <= 1}>
-          -
-        </button>
+        <button onClick={handleDecrease} disabled={quantity <= 1}>-</button>
         <span>{quantity}</span>
-        <button onChange={handleIncrease}>+</button>
+        <button onClick={handleIncrease}>+</button>
       </div>
 
       <div>{formatPrice(product.price * quantity)}</div>
 
       <button onClick={handleRemove}>
-        <span>delete</span>
+        <span>삭제</span>
       </button>
     </div>
   );

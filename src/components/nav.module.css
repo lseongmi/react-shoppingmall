@@ -21,7 +21,7 @@ header {
 nav {
     display: flex;
     list-style: none;
-    gap: 30px;
+    gap: 80px;
     color: #000;
 }
 
