@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useParams, Link } from "react-router-dom";
+import style from "./ProductDetailPage.module.css";
 
 function ProductDetailPage({ products, addToCart }) {
   const { id } = useParams();
@@ -35,33 +36,62 @@ function ProductDetailPage({ products, addToCart }) {
   };
 
   return (
-    <div>
+    <div className={style.section}>
       <div>
         <div>
           <img src={product.imageUrl} alt={product.name} />
         </div>
 
-        <div>
-          <span>{product.category}</span>
-          <h1>{product.name}</h1>
-          <p>{formatPrice(product.price)}</p>
+        <div className={style.info}>
+          <span style={{ fontSize: "20px" }}>{product.category}</span>
+          <h1 style={{ fontSize: "20px" }}>{product.name}</h1>
+          <p style={{ color: "#3cd6c9" }}>{formatPrice(product.price)}</p>
         </div>
 
         <div>
-          <h3>상품 설명</h3>
+          <h3 style={{ paddingTop: "20px" }}>상품 설명</h3>
           <p>{product.description}</p>
         </div>
 
         <div>
           <div>
-            <button onClick={handleDecrease} disabled={quantity <= 1}>
+            <button
+              onClick={handleDecrease}
+              disabled={quantity <= 1}
+              style={{
+                backgroundColor: "#d6413c",
+                border: "none",
+                borderRadius: "5px",
+              }}
+            >
               -
             </button>
             <span>{quantity}</span>
-            <button onClick={handleIncrease}>+</button>
+            <button
+              onClick={handleIncrease}
+              style={{
+                backgroundColor: "#3cd6c9",
+                border: "none",
+                borderRadius: "5px",
+              }}
+            >
+              +
+            </button>
           </div>
 
-          <button onClick={handleAddToCart}>장바구니에 추가!!</button>
+          <button
+            onClick={handleAddToCart}
+            style={{
+              marginTop: "40px",
+              backgroundColor: "#3cd6c9",
+              border: "none",
+              borderRadius: "5px",
+              height: "30px",
+              marginBottom: "10px",
+            }}
+          >
+            장바구니에 추가!!
+          </button>
         </div>
 
         <div>

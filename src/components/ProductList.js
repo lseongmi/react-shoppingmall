@@ -1,12 +1,20 @@
 import { useParams } from "react-router-dom";
 import ProductItem from "./ProductItem";
 
-function ProductList({ products, addToCart, categoryFilter = null, searchTerm = "" }) {
+function ProductList({
+  products,
+  addToCart,
+  categoryFilter = null,
+  searchTerm = "",
+}) {
   const { category } = useParams(); // URL에서 카테고리 정보를 가져옴
 
-  let filteredProducts = category || categoryFilter
-    ? products.filter((product) => product.category === (category || categoryFilter))
-    : products;
+  let filteredProducts =
+    category || categoryFilter
+      ? products.filter(
+          (product) => product.category === (category || categoryFilter)
+        )
+      : products;
 
   if (searchTerm) {
     filteredProducts = filteredProducts.filter(
@@ -25,7 +33,11 @@ function ProductList({ products, addToCart, categoryFilter = null, searchTerm = 
       ) : (
         <div>
           {filteredProducts.map((product) => (
-            <ProductItem key={product.id} product={product} addToCart={addToCart} />
+            <ProductItem
+              key={product.id}
+              product={product}
+              addToCart={addToCart}
+            />
           ))}
         </div>
       )}
