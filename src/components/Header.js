@@ -1,17 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import SearchBar from "./SearchBar";
+import "../reset.css"
 import style from "./nav.module.css";
 
 function Header(cartItemCount, onSearch) {
   return (
     <header style={style.header}>
-      <div className="logo">
-        <Link to="/" className={style.item}>
-          <h1>리액트 쇼핑몰</h1>
-        </Link>
-      </div>
-
       <nav style={style.nav}>
         <li>
           <Link to="/" className={style.item}>
@@ -34,6 +29,12 @@ function Header(cartItemCount, onSearch) {
           </Link>
         </li>
       </nav>
+
+      <div>
+        <Link to="/" style={{textDecoration:"none", color: "#000"}}>
+          <h1 className={style.title}>리액트 쇼핑몰</h1>
+        </Link>
+      </div>
 
       <div className={style.search}>
         <SearchBar onSearch={onSearch} />

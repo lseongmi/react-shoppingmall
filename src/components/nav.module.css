@@ -2,25 +2,36 @@ header {
     height: 90px;
     display: flex;
     list-style: none;
-    gap: 50px;
-    background-color: darkblue;
-    padding-left: 80px;
+    background-color: #fff;
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
+    padding-left: 50px;
+    padding-right: 20px;
+    justify-content: space-between;
+    border-radius: 10px;
+    align-items: center;
 }
+
+.title {
+    padding: 30px;
+    font-size: 25px;
+    font-weight: bolder;
+}
+
 
 nav {
     display: flex;
     list-style: none;
-    gap: 50px;
-    margin: 30px;
-    color: #fff;
+    gap: 30px;
+    color: #000;
 }
 
 .item {
     text-decoration: none;
-    color: #fff;
+    color: #000;
 }
 .item:hover {
-    font-size: 18px;
+    text-decoration: underline;
+    color: #3cd6c9;
 }
 
 .search {
