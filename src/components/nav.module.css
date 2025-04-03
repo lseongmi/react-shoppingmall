@@ -1,0 +1,31 @@
+header {
+    height: 90px;
+    display: flex;
+    list-style: none;
+    gap: 50px;
+    background-color: darkblue;
+    padding-left: 80px;
+}
+
+nav {
+    display: flex;
+    list-style: none;
+    gap: 50px;
+    margin: 30px;
+    color: #fff;
+}
+
+.item {
+    text-decoration: none;
+    color: #fff;
+}
+.item:hover {
+    font-size: 18px;
+}
+
+.search {
+    display: flex;
+    list-style: none;
+    gap: 50px;
+    margin: 30px;
+}
