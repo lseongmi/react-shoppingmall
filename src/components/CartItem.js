@@ -25,7 +25,7 @@ function CartItem({ item, updateQuantity, removeFromCart }) {
   return (
     <div className={style.cartItem}>
       <div className={style.productImage}>
-        <img src={product.imgUrl} alt={product.name} />
+        <img src={product.imageUrl} alt={product.name} />
       </div>
 
       <div className={style.productInfo}>

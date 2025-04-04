@@ -21,8 +21,7 @@ const products = [
     name: "가죽 지갑",
     price: 35000,
     description: "고급 가죽으로 제작된 내구성 좋은 지갑입니다.",
-    imageUrl:
-      "https://igaboro.kr/data/goods/23/10/43/1000967311/1000967311_detail_02.jpg",
+    imageUrl: "https://img.shoppingntmall.com/goods/499/11520499_h.jpg",
     category: "액세서리",
   },
   {

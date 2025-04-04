@@ -24,16 +24,16 @@
 }
 
 .info {
-    padding: 24px 30px;
+    padding: 18px 30px;
     margin: 0;
 }
 
 .action {
-    margin: 15px 30px;
+    margin: 3px 30px;
     background-color: #3cd6c9;
     border-radius: 8px;
     border: none;
-    padding: 12px 24px;
+    padding: 10px 24px;
     color: white;
     font-weight: 600;
     cursor: pointer;
@@ -64,4 +64,9 @@ body {
 h2, h3 {
     margin-top: 0;
     color: #222;
+}
+
+.productLink {
+    text-decoration: none;
+    color: #3cd6c9;
 }

@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import CartItem from "./CartItem";
 import style from "../pages/CartPage.module.css";
+import styles from "./Cart.module.css";
 
 function Cart({ cartItems, updateQuantity, removeFromCart, clearCart }) {
   const calculateTotal = () => {
@@ -21,7 +22,6 @@ function Cart({ cartItems, updateQuantity, removeFromCart, clearCart }) {
 
   return (
     <div>
-      <h2>장바구니</h2>
       {cartItems.length === 0 ? (
         <div className={style.emptyCart}>
           <p>장바구니가 비어있습니다.</p>
@@ -31,8 +31,8 @@ function Cart({ cartItems, updateQuantity, removeFromCart, clearCart }) {
         </div>
       ) : (
         <>
-          <div>
-            <span>상품</span>
+          <div className={styles.header}>
+            <span style={{ marginRight: "160px" }}>상품</span>
             <span>수량</span>
             <span>합계</span>
             <span></span>
@@ -46,9 +46,17 @@ function Cart({ cartItems, updateQuantity, removeFromCart, clearCart }) {
             />
           ))}
           <div>
-            <h3>총 합계: {formatPrice(calculateTotal())}</h3>
-            <button onClick={handleCheckout}>결제하기</button>
-            <button onClick={clearCart}>장바구니 비우기</button>
+            <h3 style={{ color: "#3cd6c9", marginBottom: "50px" }}>
+              총 합계: {formatPrice(calculateTotal())}
+            </h3>
+            <div className={styles.total}>
+              <button onClick={handleCheckout} className={styles.button}>
+                결제하기
+              </button>
+              <button onClick={clearCart} className={styles.delete}>
+                장바구니 비우기
+              </button>
+            </div>
           </div>
         </>
       )}
