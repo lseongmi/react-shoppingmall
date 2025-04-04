@@ -1,4 +1,5 @@
 import React from "react";
+import style from "./CartItem.module.css";
 
 function CartItem({ item, updateQuantity, removeFromCart }) {
   const { product, quantity } = item;
@@ -22,25 +23,37 @@ function CartItem({ item, updateQuantity, removeFromCart }) {
   };
 
   return (
-    <div>
-      <div>
-        <img src={product.imgUrl} alt={product.name} width="50" />
+    <div className={style.cartItem}>
+      <div className={style.productImage}>
+        <img src={product.imgUrl} alt={product.name} />
       </div>
 
-      <div>
-        <h3>{product.name}</h3>
-        <p>{formatPrice(product.price)}</p>
+      <div className={style.productInfo}>
+        <h3 className={style.productName}>{product.name}</h3>
+        <p className={style.productPrice}>{formatPrice(product.price)}</p>
       </div>
 
-      <div>
-        <button onClick={handleDecrease} disabled={quantity <= 1}>-</button>
-        <span>{quantity}</span>
-        <button onClick={handleIncrease}>+</button>
+      <div className={style.quantityControl}>
+        <button
+          onClick={handleDecrease}
+          disabled={quantity <= 1}
+          className={`${style.quantityButton} ${
+            quantity <= 1 ? style.disabled : ""
+          }`}
+        >
+          -
+        </button>
+        <span className={style.quantity}>{quantity}</span>
+        <button onClick={handleIncrease} className={style.quantityButton}>
+          +
+        </button>
       </div>
 
-      <div>{formatPrice(product.price * quantity)}</div>
+      <div className={style.totalPrice}>
+        {formatPrice(product.price * quantity)}
+      </div>
 
-      <button onClick={handleRemove}>
+      <button onClick={handleRemove} className={style.removeButton}>
         <span>삭제</span>
       </button>
     </div>

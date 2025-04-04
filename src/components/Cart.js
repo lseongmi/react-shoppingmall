@@ -1,14 +1,18 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import CartItem from "./CartItem";
+import style from "../pages/CartPage.module.css";
 
 function Cart({ cartItems, updateQuantity, removeFromCart, clearCart }) {
   const calculateTotal = () => {
-    return cartItems.reduce((total, item) => total + item.product.price * item.quantity, 0);
+    return cartItems.reduce(
+      (total, item) => total + item.product.price * item.quantity,
+      0
+    );
   };
 
   const formatPrice = (price) => {
-    return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + "원"; 
+    return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + "원";
   };
 
   const handleCheckout = () => {
@@ -19,9 +23,11 @@ function Cart({ cartItems, updateQuantity, removeFromCart, clearCart }) {
     <div>
       <h2>장바구니</h2>
       {cartItems.length === 0 ? (
-        <div>
+        <div className={style.emptyCart}>
           <p>장바구니가 비어있습니다.</p>
-          <Link to="/">쇼핑 계속하기</Link>
+          <Link to="/" className={style.continueShopping}>
+            쇼핑 계속하기
+          </Link>
         </div>
       ) : (
         <>
@@ -32,11 +38,11 @@ function Cart({ cartItems, updateQuantity, removeFromCart, clearCart }) {
             <span></span>
           </div>
           {cartItems.map((item) => (
-            <CartItem 
-              key={item.product.id} 
-              item={item} 
-              updateQuantity={updateQuantity} 
-              removeFromCart={removeFromCart} 
+            <CartItem
+              key={item.product.id}
+              item={item}
+              updateQuantity={updateQuantity}
+              removeFromCart={removeFromCart}
             />
           ))}
           <div>

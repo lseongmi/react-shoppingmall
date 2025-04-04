@@ -6,16 +6,16 @@ function ProductItem({ product, addToCart }) {
   const { id, name, price, imageUrl, category } = product;
 
   const handleAddToCart = () => {
-    addToCart(product);
-  }; //현재상품 (product)를 장바구니에 추가
+    addToCart(product); // 현재상품 (product)를 장바구니에 추가
+  };
 
   const formatprice = (price) => {
-    return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + "원"; //세자리 마다 쉼표를 삽입하고 원을 붙인다.
+    return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + "원"; // 세자리 마다 쉼표를 삽입하고 원을 붙인다.
   };
 
   return (
     <div className={style.section}>
-      <div className="product-image">
+      <div className={style.productImage}>
         <Link to={`/product/${id}`}>
           <img src={imageUrl} alt={name} className={style.img} />
         </Link>
@@ -24,15 +24,11 @@ function ProductItem({ product, addToCart }) {
       <div className={style.info}>
         <span className={style.category}>{category}</span>
         <h3>
-          <Link to={`/product/${id}`} style={{ textDecoration: "none" }}>
+          <Link to={`/product/${id}`} className={style.productLink}>
             {name}
           </Link>
-          {/* 템플릿 리터럴을 이용한 동적 url 생성 */}
-          {/* Link와 a 태그의 차이점 : Link는 새로고침을 하지 않는다. 간편하고 더 빠르다 */}
         </h3>
-        <p style={{ color: "#3cd6c9", marginBottom: "10px" }}>
-          {formatprice(price)}
-        </p>
+        <p className={style.price}>{formatprice(price)}</p>
       </div>
 
       <div>

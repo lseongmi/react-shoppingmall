@@ -1,31 +1,67 @@
+
 .section {
-    margin-top: 10px;
+    margin: 20px auto 100px;
     width: 400px;
     height: 550px;
-    margin-bottom: 100px;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #ffffff;
+}
+
+.section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
 }
 
 .img {
-    width: 90%;
-    height: 40%;
-    padding: 20px;
-    border-radius: 10px;
+    width: 100%;
+    height: 45%;
+    padding: 0;
+    object-fit: cover;
+    border-radius: 16px 16px 0 0;
 }
 
 .info {
-    margin-left: 50px;
+    padding: 24px 30px;
+    margin: 0;
 }
 
 .action {
-    margin-top: 5px;
-    margin-left: 50px;
+    margin: 15px 30px;
     background-color: #3cd6c9;
-    border-radius: 5px;
+    border-radius: 8px;
     border: none;
+    padding: 12px 24px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    box-shadow: 0 4px 10px rgba(60, 214, 201, 0.3);
+}
+
+.action:hover {
+    background-color: #2bc0b4;
 }
 
 .category {
-    padding-bottom: 10px;
+    padding-bottom: 12px;
+    color: #666;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 500;
+}
+
+/* 폰트 추가 */
+body {
+    font-family: 'Pretendard', 'Apple SD Gothic Neo', sans-serif;
+    color: #333;
+    background-color: #f9f9f9;
+}
+
+h2, h3 {
+    margin-top: 0;
+    color: #222;
 }

@@ -14,17 +14,17 @@ function SearchBar({ onSearch }) {
   };
 
   return (
-    <div>
+    <div className={style.container}>
       <form onSubmit={handleSubmit} className={style.form}>
         <input
           type="text"
-          placeholder="상품 검색 해주세요"
+          placeholder="상품을 검색해주세요"
           value={searchTerm}
           onChange={handleChange}
           className={style.input}
         />
-        <button type="submit" className={style.button}> 
-          <span>검색</span>
+        <button type="submit" className={style.button}>
+          검색
         </button>
       </form>
     </div>

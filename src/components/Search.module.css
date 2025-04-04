@@ -1,20 +1,68 @@
-.form {
+.container {
+    margin: 20px 0;
+  }
+  
+  .form {
     display: flex;
     gap: 10px;
-}
-
-.input {
-    margin-top: 2px;
-    height: 20px;
-    border-radius: 5px;
-    border: none;
-    text-decoration: underline;
-}
-
-.button {
-    width: 50px;
-    height: 25px;
+    align-items: center;
+    max-width: 500px;
+  }
+  
+  .input {
+    flex: 1;
+    height: 40px;
+    padding: 0 15px;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+    font-size: 14px;
+    outline: none;
+    transition: all 0.2s ease;
+    background-color: #f9f9f9;
+  }
+  
+  .input:focus {
+    border-color: #3cd6c9;
+    box-shadow: 0 0 0 2px rgba(60, 214, 201, 0.2);
+    background-color: #fff;
+  }
+  
+  .input::placeholder {
+    color: #aaa;
+  }
+  
+  .button {
+    width: auto;
+    min-width: 70px;
+    height: 40px;
     background-color: #3cd6c9;
+    color: white;
     border: none;
-    border-radius: 10px;
-}
+    border-radius: 8px;
+    padding: 0 15px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .button:hover {
+    background-color: #32c1b5;
+  }
+  
+  .button:active {
+    transform: scale(0.98);
+  }
+  
+  @media (max-width: 480px) {
+    .form {
+      flex-direction: column;
+      width: 100%;
+    }
+    
+    .input, .button {
+      width: 100%;
+    }
+  }
